@@ -11,7 +11,7 @@ class CreateUserControler{
 
         const createUserUseCase = container.resolve(CreateUserUseCase);
 
-        createUserUseCase.execute({name,email,driver_license,password});
+        await createUserUseCase.execute({name,email,driver_license,password});
 
         return response.status(201).send();
 
