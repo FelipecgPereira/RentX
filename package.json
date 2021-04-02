@@ -13,6 +13,7 @@
     "@types/jest": "^26.0.22",
     "bcrypt": "^5.0.1",
     "csv-parse": "^4.15.3",
+    "dayjs": "^1.10.4",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "2.22.1",
     "express": "^4.17.1",
