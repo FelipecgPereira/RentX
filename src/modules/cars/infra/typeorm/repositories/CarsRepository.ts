@@ -10,6 +10,7 @@ class CarsRepository implements ICarsRepository{
     constructor(){
         this.respository = getRepository(Car);
     }
+  
     async create({
         brand,
         category_id,
@@ -38,6 +39,28 @@ class CarsRepository implements ICarsRepository{
         })
 
         return car;
+    }
+
+    async findAvailable(brand?: string, category_id?: string, name?: string): Promise<Car[]> {
+        const carsQuery = await this.respository
+        .createQueryBuilder("cars")
+        .where("available = :available",{available: true});
+
+        if(brand){
+            carsQuery.andWhere("cars.brand = :brand",{brand});
+        }
+
+        if(name){
+            carsQuery.andWhere("cars.name = :name",{name});
+        }
+
+        if(category_id){
+            carsQuery.andWhere("cars.category_id = :category_id",{category_id});
+        }
+
+        const cars = await carsQuery.getMany();
+
+        return cars;
     }
 
 }
