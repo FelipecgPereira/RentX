@@ -5,11 +5,13 @@ import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { Car } from "../entities/Car";
 
 class CarsRepository implements ICarsRepository{
-    private respository : Repository<Car>
+    private repository : Repository<Car>
 
     constructor(){
-        this.respository = getRepository(Car);
+        this.repository = getRepository(Car);
     }
+
+
    
   
     async create({
@@ -23,7 +25,7 @@ class CarsRepository implements ICarsRepository{
         specifications,
         id
     }: ICreateCarDTO): Promise<Car> {
-        const car = this.respository.create({
+        const car = this.repository.create({
             brand,
             category_id,
             daily_rate,
@@ -34,12 +36,12 @@ class CarsRepository implements ICarsRepository{
             specifications,
             id
         });
-        await this.respository.save(car);
+        await this.repository.save(car);
         return car;
     }
 
     async findByLicensePlate(license_plate: string): Promise<Car> {
-        const car = await this.respository.findOne({
+        const car = await this.repository.findOne({
             license_plate
         })
 
@@ -47,7 +49,7 @@ class CarsRepository implements ICarsRepository{
     }
 
     async findAvailable(brand?: string, category_id?: string, name?: string): Promise<Car[]> {
-        const carsQuery = await this.respository
+        const carsQuery = await this.repository
         .createQueryBuilder("cars")
         .where("available = :available",{available: true});
 
@@ -69,9 +71,20 @@ class CarsRepository implements ICarsRepository{
     }
 
     async findById(id: string): Promise<Car> {
-        const car = await this.respository.findOne(id);
+        const car = await this.repository.findOne(id);
         return car;
     }
+
+   async updateAvailable(id: string, available: boolean): Promise<void> {
+        await this.repository
+        .createQueryBuilder()
+        .update()
+        .set({available})
+        .where("id = :id")
+        .setParameters({id})
+        .execute();
+    }
+   
 
 }
 
