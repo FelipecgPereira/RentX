@@ -39,7 +39,7 @@ describe("Authenticate User",()=>{
         expect(result).toHaveProperty("token");
     });
 
-    it("should be able authenticate  an noneexistent user", ()=>{
+    it("should be able authenticate  an none existent user", ()=>{
         expect(async ()=>{
             await authenticateUserCase.execute({
                 email:"false@email.com",
