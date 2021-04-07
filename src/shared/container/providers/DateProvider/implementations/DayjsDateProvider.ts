@@ -5,7 +5,7 @@ import { IDateProvider } from "../IDateProvider";
 dayjs.extend(utc)
 
 class DayjsDateProvider implements IDateProvider{
-    
+   
     dateNow():Date{
         return dayjs().toDate();
     }
@@ -28,6 +28,10 @@ class DayjsDateProvider implements IDateProvider{
        return dayjs(end_date_utc).diff(start_date_utc,"days");
     }
 
+    addDays(days: number): Date {
+        return dayjs().add(days,"days").toDate()
+    }
+    
 
 }
 
