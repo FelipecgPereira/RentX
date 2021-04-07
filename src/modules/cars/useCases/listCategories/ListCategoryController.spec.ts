@@ -34,7 +34,7 @@ describe("List Categories",()=>{
             password:"admin"
         })
  
-        const {token}= responseToken.body;
+        const {refresh_token}= responseToken.body;
 
       
  
@@ -42,11 +42,11 @@ describe("List Categories",()=>{
              name: "category supertest",
              description:"category supertest"
          }).set({
-             Authorization: `Bearer ${token}`
+             Authorization: `Bearer ${refresh_token}`
          })
  
          const response = await request(app).get("/categories").set({
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${refresh_token}`
         });
 
          

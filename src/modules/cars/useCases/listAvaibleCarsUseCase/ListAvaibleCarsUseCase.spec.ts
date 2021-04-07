@@ -27,7 +27,7 @@ describe("List Cars", ()=>{
         expect(cars).toEqual([car]);
     });
 
-    it("should be able to list all avalable cars by brand", async()=>{
+    it("should be able to list all available cars by brand", async()=>{
 
        const car = await carsRepository.create({
         name:"Car 2",
@@ -46,7 +46,7 @@ describe("List Cars", ()=>{
     expect(cars).toEqual([car]);
     })
 
-    it("should be able to list all avalable cars by name", async()=>{
+    it("should be able to list all available cars by name", async()=>{
 
         const car = await carsRepository.create({
          name:"Car 3",
@@ -66,7 +66,7 @@ describe("List Cars", ()=>{
      expect(cars).toEqual([car]);
      })
 
-     it("should be able to list all avalable cars by category", async()=>{
+     it("should be able to list all available cars by category", async()=>{
 
         const car = await carsRepository.create({
          name:"Car 3",
