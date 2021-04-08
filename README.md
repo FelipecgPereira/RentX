@@ -64,7 +64,7 @@ $ docker-compose up
 ```
 ---
 
-## 📜 Stript de testes
+## 📜 Script de testes
 
 
 
