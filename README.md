@@ -6,7 +6,11 @@
 
 - [Sobre](#-sobre)
 - [Tecnologia](#-tecnologia)
+- [Libs](#-libs)
+- [Banco de Dados](#-banco-de-dados)
 - [Como baixar](#-como-baixar)
+- [Script de testes](#-script-de-testes)
+- [Swagger](#-Swagger)
 ---
 
 ## 📋 Sobre
