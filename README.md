@@ -40,7 +40,7 @@ Rentx é uma aplicação para aluguel de carros, possui swagger configurado para
 
 ```bash 
 # Clonar o repositório
-$ git clone https://github.com/FelipecgPereira/pets-Angular.git
+$ git clone https://github.com/FelipecgPereira/RentX.git
 
 # Entrar no diretorio
 $ cd pet-angular
