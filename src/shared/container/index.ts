@@ -16,6 +16,7 @@ import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTok
 import { UsersTokensRepository } from "@modules/accounts/infra/typeorm/repositories/UsersTokensRepository";
 
 
+
 container.registerSingleton<ICategoriesRepository>(
     "CategoriesRepository",
     CategoriesRepository
