@@ -1,7 +1,6 @@
-import { Expose } from "class-transformer";
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import {v4 as uuidV4} from "uuid";
-
+import { Expose } from "class-transformer";
 
 @Entity("users")
 class User{
